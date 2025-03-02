@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Detection</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* General Page Styling */
+        body {
+            background-color: #ffe6f2; /* Soft Pink */
+            color: #333; /* Darker Text for Better Readability */
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        /* Form Container */
+        form {
+            background-color: #fff; /* White Box */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            text-align: center;
+            overflow-y: auto;
+        }
+
+        /* Form Title */
+        h2 {
+            margin-bottom: 20px;
+            color: #d6336c; /* Dark Pink */
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Labels */
+        label {
+            display: block;
+            font-size: 15px;
+            margin-top: 12px;
+            color: #555;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        /* Input Fields */
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #333;
+            font-size: 14px;
+            display: block;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #d6336c;
+            box-shadow: 0 0 5px rgba(214, 51, 108, 0.3);
+        }
+
+        /* Placeholder Styling */
+        input::placeholder {
+            color: #999;
+        }
+
+        /* Submit Button */
+        button {
+            background-color: #d6336c;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #a72554;
+        }
+
+        /* Ensure scrolling for smaller screens */
+        @media (max-width: 600px) {
+            form {
+                width: 90%;
+            }
+        }
+
+        @media (max-height: 700px) {
+            body {
+                height: auto;
+            }
+            form {
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form action="{{ url_for('predict') }}" method="POST">
+        <h2>Enter Tumor Features</h2>
+
+        <label>1. Radius Mean:</label>
+        <input type="text" name="radius_mean" placeholder="Enter value" required>
+
+        <label>2. Texture Mean:</label>
+        <input type="text" name="texture_mean" placeholder="Enter value" required>
+
+        <label>3. Perimeter Mean:</label>
+        <input type="text" name="perimeter_mean" placeholder="Enter value" required>
+
+        <label>4. Area Mean:</label>
+        <input type="text" name="area_mean" placeholder="Enter value" required>
+
+        <label>5. Smoothness Mean:</label>
+        <input type="text" name="smoothness_mean" placeholder="Enter value" required>
+
+        <label>6. Compactness Mean:</label>
+        <input type="text" name="compactness_mean" placeholder="Enter value" required>
+
+        <label>7. Concavity Mean:</label>
+        <input type="text" name="concavity_mean" placeholder="Enter value" required>
+
+        <label>8. Concave Points Mean:</label>
+        <input type="text" name="concave_points_mean" placeholder="Enter value" required>
+
+        <label>9. Symmetry Mean:</label>
+        <input type="text" name="symmetry_mean" placeholder="Enter value" required>
+
+        <label>10. Fractal Dimension Mean:</label>
+        <input type="text" name="fractal_dimension_mean" placeholder="Enter value" required>
+
+        <label>11. Radius SE:</label>
+        <input type="text" name="radius_se" placeholder="Enter value" required>
+
+        <label>12. Texture SE:</label>
+        <input type="text" name="texture_se" placeholder="Enter value" required>
+
+        <label>13. Perimeter SE:</label>
+        <input type="text" name="perimeter_se" placeholder="Enter value" required>
+
+        <label>14. Area SE:</label>
+        <input type="text" name="area_se" placeholder="Enter value" required>
+
+        <label>15. Smoothness SE:</label>
+        <input type="text" name="smoothness_se" placeholder="Enter value" required>
+
+        <label>16. Compactness SE:</label>
+        <input type="text" name="compactness_se" placeholder="Enter value" required>
+
+        <label>17. Concavity SE:</label>
+        <input type="text" name="concavity_se" placeholder="Enter value" required>
+
+        <label>18. Concave Points SE:</label>
+        <input type="text" name="concave_points_se" placeholder="Enter value" required>
+
+        <label>19. Symmetry SE:</label>
+        <input type="text" name="symmetry_se" placeholder="Enter value" required>
+
+        <label>20. Fractal Dimension SE:</label>
+        <input type="text" name="fractal_dimension_se" placeholder="Enter value" required>
+
+        <label>21. Radius Worst:</label>
+        <input type="text" name="radius_worst" placeholder="Enter value" required>
+
+        <label>22. Texture Worst:</label>
+        <input type="text" name="texture_worst" placeholder="Enter value" required>
+
+        <label>23. Perimeter Worst:</label>
+        <input type="text" name="perimeter_worst" placeholder="Enter value" required>
+
+        <label>24. Area Worst:</label>
+        <input type="text" name="area_worst" placeholder="Enter value" required>
+
+        <label>25. Smoothness Worst:</label>
+        <input type="text" name="smoothness_worst" placeholder="Enter value" required>
+
+        <label>26. Compactness Worst:</label>
+        <input type="text" name="compactness_worst" placeholder="Enter value" required>
+
+        <label>27. Concavity Worst:</label>
+        <input type="text" name="concavity_worst" placeholder="Enter value" required>
+
+        <label>28. Concave Points Worst:</label>
+        <input type="text" name="concave_points_worst" placeholder="Enter value" required>
+
+        <label>29. Symmetry Worst:</label>
+        <input type="text" name="symmetry_worst" placeholder="Enter value" required>
+
+        <label>30. Fractal Dimension Worst:</label>
+        <input type="text" name="fractal_dimension_worst" placeholder="Enter value" required>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>

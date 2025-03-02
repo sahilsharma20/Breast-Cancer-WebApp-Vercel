@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <style>
+        /* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdf2f8; /* Light Pink Background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Main Container */
+.feedback-container {
+    width: 100%;
+    background: #f8bbd0; /* Matching Section Background */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(220, 20, 60, 0.3);
+    text-align: center;
+}
+
+/* Headings */
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #880e4f;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #5d1049;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Feedback Section */
+.feedback-section {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 7px rgba(220, 20, 60, 0.3);
+    text-align: left;
+}
+
+.feedback-section h3 {
+    color: #c2185b;
+}
+
+/* Labels */
+label {
+    font-weight: 500;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+/* Radio Button Groups */
+.radio-group, .rating {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    min-height: 60px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+textarea::placeholder {
+    color: #880e4f; /* Dark Pink */
+}
+
+input::placeholder {
+    color: #880e4f; /* Dark Pink */
+  
+}
+
+
+/* Submit Button */
+button {
+    background: #c2185b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #880e4f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feedback-container {
+        width: 95%;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="feedback-container">
+        <h2>We Value Your Feedback</h2>
+        <p>Help us improve by sharing your thoughts on our website and breast cancer prediction tool.</p>
+
+        <form action="/feedback" method="POST">
+            <!-- User Experience & Design Feedback -->
+            <div class="feedback-section">
+                <h3>User Experience & Design</h3>
+                <label>How easy was it to navigate the website? (1-5)</label>
+                <div class="rating">
+                    <input type="radio" name="navigation" value="1"> 1
+                    <input type="radio" name="navigation" value="2"> 2
+                    <input type="radio" name="navigation" value="3"> 3
+                    <input type="radio" name="navigation" value="4"> 4
+                    <input type="radio" name="navigation" value="5"> 5
+                </div>
+
+                <label>Did you find the design visually appealing?</label>
+                <div class="radio-group">
+                    <input type="radio" name="design" value="Yes"> Yes
+                    <input type="radio" name="design" value="No"> No
+                </div>
+
+                <label>What improvements would you suggest for the design?</label>
+                <textarea name="design_suggestions" placeholder="Your suggestions..."></textarea>
+            </div>
+
+            <!-- Accuracy & Reliability Feedback -->
+            <div class="feedback-section">
+                <h3>Accuracy & Reliability</h3>
+                <label>Did you find the breast cancer prediction useful?</label>
+                <div class="radio-group">
+                    <input type="radio" name="useful" value="Yes"> Yes
+                    <input type="radio" name="useful" value="No"> No
+                </div>
+
+                <label>How accurate do you think the prediction was? (1-5)</label>
+                <div class="rating">
+                    <input type="radio" name="accuracy" value="1"> 1
+                    <input type="radio" name="accuracy" value="2"> 2
+                    <input type="radio" name="accuracy" value="3"> 3
+                    <input type="radio" name="accuracy" value="4"> 4
+                    <input type="radio" name="accuracy" value="5"> 5
+                </div>
+
+                <label>Would you trust this tool for medical guidance?</label>
+                <div class="radio-group">
+                    <input type="radio" name="trust" value="Yes"> Yes
+                    <input type="radio" name="trust" value="No"> No
+                </div>
+            </div>
+
+            <!-- Feature Suggestions -->
+            <div class="feedback-section">
+                <h3>Feature Suggestions</h3>
+                <label>What additional features would you like to see?</label>
+                <textarea name="features" placeholder="Your suggestions..."></textarea>
+
+                <label>Would you like a chatbot or additional resources on breast cancer?</label>
+                <div class="radio-group">
+                    <input type="radio" name="chatbot" value="Yes"> Yes
+                    <input type="radio" name="chatbot" value="No"> No
+                </div>
+            </div>
+
+            <!-- General Feedback -->
+            <div class="feedback-section">
+                <h3>General Feedback</h3>
+                <label>Any other comments or suggestions?</label>
+                <textarea name="general_feedback" placeholder="Share your thoughts..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+</body>
+</html>

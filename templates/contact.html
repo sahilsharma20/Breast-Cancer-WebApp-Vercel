@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdf2f8; /* Light Pink Background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333; /* Dark Text for Better Contrast */
+            text-align: left;
+        }
+
+        /* Main Content */
+        .main-content {
+            width: 100%;
+            background: #f8bbd0; /* Matching Section Background */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 10px rgba(220, 20, 60, 0.3);
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #880e4f; /* Dark Pink Heading */
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            color: #5d1049; /* Slightly Darker Pink */
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            width: 50%;
+            padding: 15px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.8); /* White Box */
+            box-shadow: 0px 0px 7px rgba(220, 20, 60, 0.3);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .info-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 3px;
+            color: #c2185b; /* Medium Pink */
+        }
+
+        /* Ensure Proper Vertical Alignment for Name & Email */
+.info-item div {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item p {
+    margin: 0; /* Remove extra margin */
+    padding-left: 30px; /* Adjust this value as needed */
+    text-align: left;
+}
+
+
+        .info-item i {
+            font-size: 28px;
+            color: #c2185b;
+            margin-right: 15px;
+        }
+
+        /* Google Map */
+        .map {
+            width: 50%;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+            border: none;
+            box-shadow: 0px 0px 5px rgba(255, 105, 180, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-info, .map {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main Contact Section -->
+    <div class="main-content">
+        <h2>Got a question or interested in collaborating?</h2>
+        <p> Reach out to us! We are here to help.</p>
+
+        <div class="contact-container">
+            <!-- Contact Details (Left) -->
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Address:</h4>
+                        <p>Anand International College of Engineering, Jaipur, Rajasthan</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <div>
+                        <h4>Name:</h4>
+                        <p>Sahil Sharma</p>
+                        <p>Shruti Goyal</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email:</h4>
+                        <p>sahilsharma68018@gmail.com</p>
+                        <p>goyalshruti016@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Map (Right) -->
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.295363650188!2d75.9683648748933!3d26.862355462253884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db8be74c25e59%3A0x675325c0c46956fc!2sAnand%20International%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1740547663276!5m2!1sen!2sin"
+                    allowfullscreen="">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
