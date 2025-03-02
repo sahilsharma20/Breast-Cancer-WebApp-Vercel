@@ -1,18 +1,18 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from flask import Flask, render_template, request, redirect, url_for
 import sqlite3  # Using SQLite for simplicity
 import numpy as np
-import pickle
+import joblib
 
 # Load trained model 
-with open('Breast_cancer_model.pkl', 'rb') as model_file:
-    model = pickle.load(model_file)
+# Load the trained model using Joblib
+model = joblib.load("Breast_cancer_model.pkl ")  # Replace with your actual model filename
 
 app = Flask(__name__, static_url_path='/static')
 
 @app.route("/")
 def home():
-    return jsonify({"message": "Flask App on Vercel!"})
+    return jsonify({"message": "Flask App on Vercel with Joblib!"})
 
 # Export the app for Vercel
 def handler(event, context):
