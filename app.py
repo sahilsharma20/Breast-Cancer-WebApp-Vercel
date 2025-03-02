@@ -142,7 +142,6 @@ def predict():
         return render_template('check_risk.html', prediction_text="⚠️ Error: Please enter valid numbers in all fields.")
 
 
-import os
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+    app.run(host="0.0.0.0", port=5000)
 
